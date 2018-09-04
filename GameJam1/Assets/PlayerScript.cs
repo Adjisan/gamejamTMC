@@ -8,8 +8,9 @@ public class PlayerScript : MonoBehaviour
     public SpringJoint2D spring;
     public Rigidbody2D bungyAncor;
     public bool clickedPlayer;
-    private Vector2 previousVelocity;
+    public Vector2 previousVelocity;
     public bool shot = false;
+    public bool go = false;
     // Use this for initialization
     void Start()
     {
@@ -30,11 +31,17 @@ public class PlayerScript : MonoBehaviour
 
         }
         previousVelocity = rb.velocity;
+
+        if (go == true)
+        {
+            Fire();
+            go = false;
+        }
     }
 
     void OnMouseDown()
     {
-        Fire();
+        
     }
     void Fire()
     {
@@ -46,6 +53,7 @@ public class PlayerScript : MonoBehaviour
 
     public void Release()
     {
+        
         //if bird starts to slow down(due to spring pulling back) disable spring
         if (previousVelocity.magnitude > rb.velocity.magnitude)
         {

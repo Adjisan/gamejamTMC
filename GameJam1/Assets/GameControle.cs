@@ -58,6 +58,8 @@ public class GameControle : MonoBehaviour
         Rigidbody2D brb = GameObject.FindGameObjectWithTag("Bungy").GetComponent<Rigidbody2D>();
         psc.spring.connectedBody = brb;
         GameObject.FindGameObjectWithTag("Bungy").tag = "UsedBungy";
+        psc.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        psc.go = true;
 
     }
     
