@@ -39,7 +39,7 @@ public class PlayerScript : MonoBehaviour
             Fire();
             go = false;
             jumpLimit--;
-            if(jumpLimit == 0)
+            if(jumpLimit < 1)
             {
                 spring.enabled = false;
             }
