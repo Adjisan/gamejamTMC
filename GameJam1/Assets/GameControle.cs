@@ -41,7 +41,7 @@ public class GameControle : MonoBehaviour
             Vector2 playerPos = player.transform.position;
             bg = playerPos + dif * dis;
 
-            if (psc.shot == false)
+            if (psc.shot == false && psc.jumpLimit > 0)
             {
                 CreateBungy();
             }

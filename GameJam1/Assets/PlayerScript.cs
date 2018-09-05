@@ -38,11 +38,7 @@ public class PlayerScript : MonoBehaviour
         {
             Fire();
             go = false;
-            jumpLimit--;
-            if(jumpLimit < 1)
-            {
-                spring.enabled = false;
-            }
+            
         }
     }
 
@@ -52,6 +48,8 @@ public class PlayerScript : MonoBehaviour
         spring.enabled = true;
         rb.isKinematic = false;
         shot = true;
+        jumpLimit--;
+        
     }
 
     public void Release()
