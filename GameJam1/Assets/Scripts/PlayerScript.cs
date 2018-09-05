@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     public int jumpLimit;
 
     private Rigidbody2D rb;
+    public LineRenderer lr;
     public SpringJoint2D spring;
     public Rigidbody2D bungyAncor;
     public bool clickedPlayer;
@@ -18,7 +19,7 @@ public class PlayerScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spring = GetComponent<SpringJoint2D>();
-
+        lr = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -40,6 +41,17 @@ public class PlayerScript : MonoBehaviour
             go = false;
             
         }
+        lr.SetPosition(0, transform.position);
+        if(spring.enabled == true)
+        {
+            lr.enabled = true;
+            lr.SetPosition(1, spring.connectedBody.transform.position);
+        }
+        else
+        {
+            lr.enabled = false;
+        }
+
     }
 
     void Fire()
