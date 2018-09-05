@@ -46,7 +46,10 @@ public class GameControle : MonoBehaviour
                 CreateBungy();
             }
             
-            
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            psc.lr.SetPosition(1, transform.position);
         }
     }
     
