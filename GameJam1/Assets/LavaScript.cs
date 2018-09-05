@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LavaScript : MonoBehaviour {
 
@@ -20,5 +21,6 @@ public class LavaScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(2.5f);
         ///ToDo: add restart for level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

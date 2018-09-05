@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4436849949072782}
   - component: {fileID: 212722387252949350}
   - component: {fileID: 61688243513138038}
+  - component: {fileID: 114418549048331254}
   m_Layer: 0
   m_Name: lava
   m_TagString: Untagged
@@ -53,7 +54,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -64,8 +65,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &114418549048331254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598084937658154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 427e2118af4cd8f4da2fce92aa0fc59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particle: {fileID: 1409245697457388, guid: 881e24c9fbe942b47aad27f2b79f18ff, type: 2}
 --- !u!212 &212722387252949350
 SpriteRenderer:
   m_ObjectHideFlags: 1
