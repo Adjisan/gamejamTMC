@@ -19,6 +19,11 @@ public class FinishScript : MonoBehaviour {
     {
         yield return new WaitForSeconds(1.5f); ///specify time needed
                                                ///ToDo: add wat to next level
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if (SceneManager.GetActiveScene().buildIndex + 1 > 4) {
+            SceneManager.LoadScene("level1");
+        } else {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        
     }
 }
