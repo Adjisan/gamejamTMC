@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
+    public int jumpLimit;
+
     private Rigidbody2D rb;
     public SpringJoint2D spring;
     public Rigidbody2D bungyAncor;
@@ -32,17 +34,18 @@ public class PlayerScript : MonoBehaviour
         }
         previousVelocity = rb.velocity;
 
-        if (go == true)
+        if (go == true && jumpLimit > 0)
         {
             Fire();
             go = false;
+            jumpLimit--;
+            if(jumpLimit < 1)
+            {
+                spring.enabled = false;
+            }
         }
     }
 
-    void OnMouseDown()
-    {
-        
-    }
     void Fire()
     {
         spring.distance = Vector2.Distance(spring.connectedBody.transform.position,transform.position)/3;
@@ -60,5 +63,10 @@ public class PlayerScript : MonoBehaviour
             shot = false;
             spring.enabled = false;
         }
+    }
+    
+    public void Recharge(int i)
+    {
+        jumpLimit += i;
     }
 }
