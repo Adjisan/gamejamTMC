@@ -10,8 +10,12 @@ public class LavaScript : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.tag == "Player"){
-            particle.transform.position = this.transform.position;
-            Instantiate(particle);
+            
+            if (particle != null) {
+                particle.transform.position = collider.transform.position;
+                Instantiate(particle);
+            }
+            GameObject.Destroy(collider.gameObject);
             StopAllCoroutines();
             StartCoroutine(Restart());
         }
