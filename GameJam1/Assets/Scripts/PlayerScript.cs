@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -51,7 +53,16 @@ public class PlayerScript : MonoBehaviour
         {
             lr.enabled = false;
         }
+        if (jumpLimit <= 0) {
+            StartCoroutine(Restart());
+        }
 
+    }
+
+    IEnumerator Restart() {
+        yield return new WaitForSeconds(2.5f); ///specify time needed
+                                               ///ToDo: add wat to next level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void Fire()
