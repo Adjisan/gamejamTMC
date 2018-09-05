@@ -4968,22 +4968,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particle: {fileID: 1409245697457388, guid: 881e24c9fbe942b47aad27f2b79f18ff, type: 2}
---- !u!1 &1214653262 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1934422150242302, guid: 85aa53eda2014c9409f268070a6274d1,
-    type: 2}
-  m_PrefabInternal: {fileID: 929193742}
---- !u!114 &1214653263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1214653262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c6369b94cbc39408f0da9702cd75a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1243180472
 GameObject:
   m_ObjectHideFlags: 0

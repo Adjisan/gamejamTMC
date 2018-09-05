@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class GameControle : MonoBehaviour
 {
@@ -24,7 +25,10 @@ public class GameControle : MonoBehaviour
 	
 	// Update is called once per frame
 	void LateUpdate () {
-	    if (Input.GetMouseButtonUp(0))
+        if (Input.GetButtonDown("Reset")) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (Input.GetMouseButtonUp(0))
 	    {
 	        pos = cam.ScreenToWorldPoint(Input.mousePosition);
             float dis = Vector2.Distance(player.transform.position, pos);
@@ -45,12 +49,8 @@ public class GameControle : MonoBehaviour
             {
                 CreateBungy();
             }
-            
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            psc.lr.SetPosition(1, transform.position);
-        }
+       
     }
     
 

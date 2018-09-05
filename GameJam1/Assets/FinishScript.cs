@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinishScript : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class FinishScript : MonoBehaviour {
     {
         if (collider.tag == "Player")
         {
+            Debug.Log("NEXT LEVEL");
             StopAllCoroutines();
             StartCoroutine(Restart());
         }
@@ -15,7 +17,8 @@ public class FinishScript : MonoBehaviour {
     }
     IEnumerator Restart()
     {
-        yield return new WaitForSeconds(2.5f); ///specify time needed
-        ///ToDo: add wat to next level
+        yield return new WaitForSeconds(1.5f); ///specify time needed
+                                               ///ToDo: add wat to next level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
